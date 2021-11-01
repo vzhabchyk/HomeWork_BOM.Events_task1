@@ -16,6 +16,25 @@
         <p class="product-description"></p>
         <button class="btn-buy btn-hidden" onclick="buyProduct()">Buy</button>
       </div>
+
+      <form> 
+        <input type="text" name="fullName" placeholder="Full Name" required>
+        <select name="city">
+          <option value="0">Odessa</option>
+          <option value="1">Kiev</option>
+          <option value="2">Kharkov</option>
+          <option value="3">Nikolaev</option>
+          <option value="4">Dnieper</option>
+        </select>
+        <input type="number" name="mailNumber" placeholder="mail number" min="1" required>
+        <input type="radio" name="paymentType" id="cashlessPayments" required>
+        <label for="cashlessPayments">Payment by credit card.</label>
+        <input type="radio" name="paymentType" id="pod" required>
+        <label for="pod">P.O.D.</label>
+        <input type="number" name="countProducts" placeholder="number of products" min="1" required>
+        <textarea name="comment" cols="30" rows="10"></textarea>
+        <input type="button" value="Confirm" id="btn-confirm">
+      </form>
   </main>
   
   <script src="./js/data.js"></script>
