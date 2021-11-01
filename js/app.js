@@ -2,6 +2,8 @@ const categoryList = document.getElementsByClassName('category-list')[0];
 const productsList = document.getElementsByClassName('products-list')[0];
 const productDescription = document.getElementsByClassName('product-description')[0];
 const btnBuy = document.getElementsByClassName('btn-buy')[0];
+const form = document.getElementsByTagName('form')[0];
+const btnConfirm = document.getElementById('btn-confirm');
 
 function showCategories () {
   for (let i = 0; i < arrayCategory.length; i++) {
@@ -11,14 +13,31 @@ function showCategories () {
     itemCategory.addEventListener('click', function () {
       productsList.innerHTML = '';
       productDescription.innerHTML = '';
-      btnBuy.classList.add('btn-hidden');
+      btnBuy.classList.add('hidden');
       for (let j = 0; j < arrayCategory[i].products.length; j++) {
         const itemProduct = document.createElement('li');
         itemProduct.innerHTML = arrayCategory[i].products[j].name;
         productsList.appendChild(itemProduct);
         itemProduct.addEventListener('click', function() {
           productDescription.innerHTML = arrayCategory[i].products[j].description;
-          btnBuy.classList.remove('btn-hidden');
+          btnBuy.classList.remove('hidden');
+          btnBuy.addEventListener('click', function() {
+            form.classList.remove('hidden');
+            btnConfirm.addEventListener('click', function () {
+              const formObj = document.forms[0];
+              const fullName = formObj.elements.fullName.value;
+              let city = '';
+              for (let i = 0; i < formObj.elements.city.length; i++) {
+                if (formObj.elements.city[i].selected) {
+                  city = formObj.elements.city[i].value;
+                }
+              }
+              const mailNumber = formObj.elements.mailNumber.value;
+              const paymentType = formObj.elements.paymentType.value;
+              const countProducts = formObj.elements.countProducts.value;
+              const comment = formObj.elements.comment.value;
+            })
+          })
         })
       }
     })
@@ -26,10 +45,4 @@ function showCategories () {
 }
 showCategories();
 
-function buyProduct () {
-  alert('Item bought.');
-  btnBuy.classList.add('btn-hidden');
-  productDescription.innerHTML = '';
-  productsList.innerHTML = '';
-}
 
