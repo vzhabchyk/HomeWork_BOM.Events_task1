@@ -36,6 +36,16 @@ function showCategories () {
               const paymentType = formObj.elements.paymentType.value;
               const countProducts = formObj.elements.countProducts.value;
               const comment = formObj.elements.comment.value;
+              const body = document.body;
+              const orderInfo = document.createElement('div');
+              orderInfo.innerHTML  += fullName + '</br>';
+              orderInfo.innerHTML += city + '</br>';
+              orderInfo.innerHTML += mailNumber + '</br>';
+              orderInfo.innerHTML += paymentType + '</br>';
+              orderInfo.innerHTML += arrayCategory[i].products[j].name + '</br>';
+              orderInfo.innerHTML += countProducts + '</br>';
+              orderInfo.innerHTML += comment + '</br>';
+              body.appendChild(orderInfo);
             })
           })
         })
