@@ -18,6 +18,7 @@
         <form class="hidden"> 
           <input type="text" name="fullName" placeholder="Full Name" required>
           <select name="city">
+            <option value="">---select city---</option>
             <option value="Odessa">Odessa</option>
             <option value="Kiev">Kiev</option>
             <option value="Kharkov">Kharkov</option>
@@ -26,19 +27,21 @@
           </select>
           <input type="number" name="mailNumber" placeholder="mail number" min="1" required>
           <label>
-            <input type="radio" name="paymentType" id="cashlessPayments" value="cashless" required>
+            <input type="radio" name="paymentType" id="cashlessPayments" value="Payment by credit cart" required>
             Payment by credit card.
           </label>
           <label>
-            <input type="radio" name="paymentType" id="pod" value="pod" required>
+            <input type="radio" name="paymentType" id="pod" value="P.O.D." required>
             P.O.D.
           </label>
           <input type="number" name="countProducts" placeholder="number of products" min="1" required>
           <textarea name="comment" cols="30" rows="10"></textarea>
           <input type="button" value="Confirm" id="btn-confirm">
         </form>
+        <p class="error hidden">Fill in the required fields!</p>
       </div>
-      
+      <div id="order-info">
+      </div>
 
   </main>
   
