@@ -21,12 +21,7 @@ function confirmOrder (product) {
   btnConfirm.addEventListener('click', function () {
     const formObj = document.forms[0];
     const fullName = formObj.elements.fullName.value;
-    let city = '';
-    for (let i = 0; i < formObj.elements.city.length; i++) {
-      if (formObj.elements.city[i].selected) {
-        city = formObj.elements.city[i].value;
-      }
-    }
+    const city = formObj.elements.city.value;
     const mailNumber = formObj.elements.mailNumber.value;
     const paymentType = formObj.elements.paymentType.value;
     const countProducts = formObj.elements.countProducts.value;
@@ -36,6 +31,7 @@ function confirmOrder (product) {
       errorMessage.classList.remove('hidden');
     } else {
       errorMessage.classList.add('hidden');
+      form.classList.add('hidden');
       orderInfo.innerHTML = `
         <span class="order-info-label">Full Name:</span> ${fullName} </br>
         <span class="order-info-label">City:</span> ${city} </br>
