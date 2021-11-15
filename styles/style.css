@@ -23,12 +23,12 @@ li {
 .btn-buy {
   font-size: 18px;
   padding: 10px 40px;
-  margin-left: 15%;
   border: none;
   border-radius: 4px;
   background-color: rgb(37, 114, 37);
   color: white;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 .product-info {
   width: 500px;
@@ -63,5 +63,8 @@ input {
   width: 94px;
   color: rgb(66, 61, 61);
   display: inline-block;
+}
+.user-order-info {
+  cursor: pointer;
 }
 
